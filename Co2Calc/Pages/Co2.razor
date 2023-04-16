@@ -15,16 +15,12 @@
     private int Kilometres = 100;
     private List<Transportation> Transportations = new List<Transportation>
     {
-        new() { Title = "Car 🚗", Co2PerKmInGramm=147 },
-        new() { Title = "Airplane 🛫", Co2PerKmInGramm=230 },
-        new() { Title = "Train 🚝", Co2PerKmInGramm=32 }
+        new ("Car 🚗", 147),
+        new ("Airplane 🛫", 230),
+        new ("Train 🚝", 32)
     };
 
     private int CalculateCo2(int co2value) => co2value * Kilometres;
 
-    public class Transportation
-    {
-        public string? Title { get; set; }
-        public int Co2PerKmInGramm { get; set; }
-    }
+    public record Transportation(string? Title, int Co2PerKmInGramm);
 }
