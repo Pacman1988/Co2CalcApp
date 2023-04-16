@@ -13,10 +13,12 @@
 
 @code {
     private int Kilometres = 100;
-    private List<Transportation> Transportations = new List<Transportation>{ 
-        new Transportation { Title = "Car 🚗", Co2PerKmInGramm=147 },
-        new Transportation { Title = "Airplane 🛫", Co2PerKmInGramm=230 },
-        new Transportation { Title = "Train 🚝", Co2PerKmInGramm=32 } };
+    private List<Transportation> Transportations = new List<Transportation>
+    {
+        new() { Title = "Car 🚗", Co2PerKmInGramm=147 },
+        new() { Title = "Airplane 🛫", Co2PerKmInGramm=230 },
+        new() { Title = "Train 🚝", Co2PerKmInGramm=32 }
+    };
 
     private int CalculateCo2(int co2value) => co2value * Kilometres;
 
