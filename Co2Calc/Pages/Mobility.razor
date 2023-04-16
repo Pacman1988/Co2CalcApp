@@ -4,7 +4,7 @@
 
 <h3>Co2 Output</h3>
 <label>Kilometres</label>
-<input type="number" @bind-value="Kilometres" @bind-value:event="oninput"/>
+<input type="number" @bind="Kilometres" @bind:event="oninput"/>
 
 @foreach (var t in Transportations)
 {
@@ -15,7 +15,7 @@
     private int Kilometres = 100;
     private List<Transportation> Transportations = new List<Transportation>{ 
         new Transportation { Title = "Car 🚗", Co2PerKmInGramm=147 },
-        new Transportation { Title = "Airplane ✈", Co2PerKmInGramm=230 },
+        new Transportation { Title = "Airplane 🛫", Co2PerKmInGramm=230 },
         new Transportation { Title = "Train 🚝", Co2PerKmInGramm=32 } };
 
     private int CalculateCo2(int co2value) => co2value * Kilometres;
