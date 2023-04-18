@@ -1,4 +1,4 @@
-﻿@page "/co2-calc"
+﻿@page "/calc"
 
 <PageTitle>CO2 Calc</PageTitle>
 
@@ -8,7 +8,13 @@
 
 @foreach (var t in Transportations)
 {
-    <Result Transport="@t.Title" Co2inKg="CalculateCo2InKg(t.Co2PerKmInGramm)" />
+    <div class="card w-25 mt-2">
+        <div class="card-body">
+            <h2 class="card-title">@t.Title</h2>
+            <hr />
+            <p class="card-text fw-bold">@CalculateCo2InKg(t.Co2PerKmInGramm) kilograms</p>
+        </div>
+    </div>
 }
 
 @code {
