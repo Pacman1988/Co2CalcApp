@@ -27,12 +27,12 @@ It shows the following points:
 3. Show result
 4. Add PageTitle Component `<PageTitle>CO2 Output Calc</PageTitle>`
 5. Change `<h3>` text to ***CO2 output***
-6. Add label and input
+6. Create field Kilometres `private int Kilometres = 100;`
+7. Add label and input
 ```  
 <label>Kilometres</label>
 <input type="number" @bind="Kilometres"/>
 ```  
-7. Create field Kilometres `private int Kilometres = 100;`
 8. Create record Transportation 
 ```
 public record Transportation(string? Title, double Co2PerKmInGramm);
