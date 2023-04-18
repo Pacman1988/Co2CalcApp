@@ -8,7 +8,7 @@
 
 @foreach (var t in Transportations)
 {
-    <Calc Transport="@t.Title" Value="CalculateCo2(t.Co2PerKmInGramm)" />
+    <Result Transport="@t.Title" Co2inKg="CalculateCo2InKg(t.Co2PerKmInGramm)" />
 }
 
 @code {
@@ -20,7 +20,7 @@
         new ("Train 🚝", 32)
     };
 
-    private int CalculateCo2(int co2value) => co2value * Kilometres;
+    private double CalculateCo2InKg(double co2value) => (co2value * Kilometres) / 1000;
 
-    public record Transportation(string? Title, int Co2PerKmInGramm);
+    public record Transportation(string? Title, double Co2PerKmInGramm);
 }
