@@ -66,3 +66,28 @@ private double CalculateCo2InKg(double co2value) => (co2value * Kilometres) / 10
 ```
 13. Add Method to card p class `@CalculateCo2InKg(t.Co2PerKmInGramm)`
 14. Add `@bind:event="oninput"` to input.
+
+# The least C# way
+```
+@code {
+    int Kilometres = 100;
+
+    List<Transportation> Transportations = new List<Transportation>()
+    {
+        new Transportation{Title = "Car 🚗", Co2PerKmInGramm = 147 },
+        new Transportation{Title = "Airplane 🛫", Co2PerKmInGramm = 230 },
+        new Transportation{Title = "Train 🚄", Co2PerKmInGramm = 32 }       
+    };
+
+    class Transportation
+    {
+        public required string Title { get; set; }
+        public required double Co2PerKmInGramm { get; set; }
+    }
+
+    double CalculateCo2InKg(double co2value)
+    {
+        return (co2value * Kilometres) / 1000;
+    }
+}
+```
